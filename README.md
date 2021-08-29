@@ -88,7 +88,7 @@ Or generating random data running the ```randomSeed.js``` file:
 
 Run the following command in order to start the application in a development environment:
 
-```yarn dev```
+```npm run dev``` **or**```yarn dev```
 
 # :postbox: Faq
 

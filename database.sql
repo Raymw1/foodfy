@@ -1,8 +1,8 @@
-DROP SCHEMA public CASCADE;
-CREATE SCHEMA public;
+-- DROP SCHEMA public CASCADE;
+-- CREATE SCHEMA public;
 
-DROP DATABASE IF EXISTS foodfy;
-CREATE DATABASE foodfy;
+-- DROP DATABASE IF EXISTS foodfy;
+-- CREATE DATABASE foodfy;
 
 ------------- RESET TABLES ---------------- 
 -- TRUNCATE chefs RESTART IDENTITY CASCADE;
@@ -38,7 +38,7 @@ CREATE TABLE "files" (
 );
 
 CREATE TABLE "recipes" (
-    "id" SERIAL NOT NULL,
+    "id" SERIAL PRIMARY KEY NOT NULL,
     "chef_id" integer NOT NULL,
     "title" text NOT NULL,
     "ingredients" text[] NOT NULL,

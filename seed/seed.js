@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { hash } = require("bcryptjs");
 const faker = require("faker");
 
@@ -6,7 +7,6 @@ const File = require("../src/app/model/File");
 const Chef = require("../src/app/model/Chef");
 const Recipe = require("../src/app/model/Recipe");
 const RecipeFiles = require("../src/app/model/RecipeFiles");
-const getImages = require("./getImages");
 
 const {
   chefs: dataChefs,

@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { hash } = require("bcryptjs");
 const faker = require("faker");
 

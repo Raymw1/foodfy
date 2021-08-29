@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { createApi } = require("unsplash-js");
 const fs = require("fs");
 const fetch = require("node-fetch");

@@ -5,6 +5,9 @@
   "main": "src/server.js",
   "scripts": {
     "dev": "nodemon -r dotenv/config .",
+    "configure-db": "node src/database/create.js",
+    "seed-db": "node seed/seed.js",
+    "random-seed-db": "node seed/randomSeed.js",
     "start": "node ."
   },
   "keywords": [],
@@ -22,6 +25,7 @@
     "nodemailer": "^6.6.3",
     "nunjucks": "^3.2.3",
     "pg": "^8.7.1",
+    "pgtools": "^0.3.2",
     "unsplash-js": "^7.0.15"
   },
   "devDependencies": {
