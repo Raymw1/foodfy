@@ -19,6 +19,11 @@
 
 <br />
 
+<p align="center"><img src=".github/home.png"/></p>
+<p align="center"><img src=".github/recipes.png"/></p>
+<p align="center"><img src=".github/chefs.png"/></p>
+<p align="center"><img src=".github/login.png"/></p>
+<p align="center"><img src=".github/admin.png"/></p>
 
 
 ---
@@ -82,13 +87,13 @@ You can generate the data already prepared running the ```seed.js``` file:
 
 Or generating random data running the ```randomSeed.js``` file:
 
-```node run random-seed-db```
+```npm run random-seed-db```
 
 **Be sure to fill the Unsplash access key in ```.env``` to use their API**
 
 Run the following command in order to start the application in a development environment:
 
-```npm run dev``` **or**```yarn dev```
+```npm run dev``` **or** ```yarn dev```
 
 # :postbox: Faq
 
