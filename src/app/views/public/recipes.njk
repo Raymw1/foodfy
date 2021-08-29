@@ -1,0 +1,25 @@
+{% extends "templates/layout.njk" %}
+{% block head %}
+    <link rel="stylesheet" href="/styles/recipes.css">
+    <link rel="stylesheet" href="/styles/recipes-grid.css">
+    <title>Foodfy - Receitas</title>
+{% endblock head %}
+{% block content %}
+        {% if filter %}
+        <h2>Buscando por "{{ filter }}"</h2>
+        {% endif %}
+        <div class="recipe-cards">
+            {% for recipe in recipes %}
+                <div class="recipe-card" id="{{ recipe.id }}">
+                    <img src="{{ recipe.image.src or 'http://placehold.it/940x280?text=RECEITA SEM FOTO' }}" alt="{{ recipe.title }}">
+                    <p>{{ recipe.title }}</p>
+                    <small>por {{ recipe.chef_name }}</small>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="pagination"
+        data-page="{{ pagination.page }}"
+        data-total="{{ pagination.total }}"
+        data-filter="{{ filter }}">
+        </div>
+{% endblock content %}

@@ -1,0 +1,29 @@
+/* ================= MESSAGES ================= */
+.message-box {
+  position: fixed;
+  top: 20px;
+  right: -1000px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ddd;
+  font-weight: bold;
+  max-width: 500px;
+  padding: 20px 32px;
+  transition: all 400ms;
+}
+
+.message-box.show {
+  right: 20px;
+}
+
+.error-message {
+  background-color: #dc4747;
+  box-shadow: 2px 2px 4px -2px #dc4747aa;
+}
+
+.success-message {
+  background-color: #01b12a;
+  box-shadow: 2px 2px 4px -2px #01b12aaa;
+}

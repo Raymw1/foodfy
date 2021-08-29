@@ -1,0 +1,66 @@
+<div class="input-group">
+    <h4>Imagem da receita</h4>
+    <div class="photos">
+        <div id="photos-upload">
+            <input type="file" name="photos" id="photos-input" multiple accept="image/*" onchange="PhotosUpload.handleFileInput(event);">
+            <i class="material-icons">add</i>
+        </div>
+        <div id="photos-preview">
+            {% if recipe.images %}
+            {% for file in recipe.images %}
+            <div class="photo" id="{{ file.id }}">
+                <img src="{{ file.src }}" alt="{{ file.name }}">
+                <i class="material-icons"  onclick="PhotosUpload.removeOldPhoto(event);">close</i>
+            </div>
+            {% endfor %}
+            <input type="hidden" name="removed_files">
+            {% endif %}
+        </div>
+    </div>
+</div>
+<div class="input-group">
+    <h4>Chef</h4>
+    <select name="chef_id" id="chef_id" required>
+        <option value="" disabled selected>Selecione um chef</option>
+        {% for chef in chefs %}
+        <option value="{{ chef.id }}" {% if recipe.chef_id == chef.id %}selected{% endif %}>
+            {{ chef.name }}
+        </option>
+        {% endfor %}
+    </select>
+</div>
+<div class="input-group">
+    <h4>Nome da receita</h4>
+    <input type="text" name="title" placeholder="" value="{{ recipe.title }}">
+</div>
+<div class="input-group">
+    <h4>Ingredientes</h4>
+    <div class="inputs">
+        {% if recipe.ingredients %}
+        {% for ingredient in recipe.ingredients %}
+        <input type="text" name="ingredients" placeholder="" value="{{ ingredient }}">
+        {% endfor %}
+        {% else %}
+        <input type="text" name="ingredients" placeholder="">
+        {% endif %}
+    </div>
+    <a class="button-text new-field">Adicionar novo ingrediente</a>
+</div>
+<div class="input-group">
+    <h4>Modo de preparo</h4>
+    <div class="inputs">
+        {% if recipe.preparation %}
+        {% for preparation in recipe.preparation %}
+        <input type="text" name="preparation" placeholder="" value="{{ preparation }}">
+        {% endfor %}
+        {% else %}
+        <input type="text" name="preparation" placeholder="">
+        {% endif %}
+    </div>
+    <a class="button-text new-field">Adicionar novo passo</a>
+</div>
+<div class="input-group">
+    <h4>Informações adicionais</h4>
+    <textarea name="information" cols="30" rows="10" >{{ recipe.information}}</textarea>
+</div>
+

@@ -1,0 +1,285 @@
+body {
+  justify-content: initial;
+}
+
+/* ================= HEADER ================= */
+.header {
+  background-color: #111;
+  padding: 26px;
+}
+
+header {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 940px;
+}
+
+header a,
+header h1 {
+  color: #fff;
+  font-weight: initial;
+}
+
+header form {
+  margin: 0 0 0 auto;
+}
+
+header form button.logout {
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+header nav {
+  margin-left: 80px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+header ul {
+  width: 100%;
+}
+
+/* ================= RECIPES GRID ================= */
+.recipe-cards {
+  margin-top: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.recipe-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 80px;
+  cursor: initial;
+}
+
+.recipe-card:hover {
+  box-shadow: none;
+}
+
+.recipe-card img {
+  border-radius: 8px;
+  width: 172px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.recipe-card-info p {
+  margin: 0;
+}
+
+.recipe-card-info small {
+  margin: 5px 0 10px;
+  display: block;
+}
+
+.recipe-card-info a,
+.button-text {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  color: var(--purple);
+  display: inline-block;
+}
+
+/* ================= RECIPE SHOW ================= */
+.recipe-edit {
+  text-align: initial;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.button {
+  padding: 8px 16px;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 4px;
+  background-color: var(--purple);
+}
+
+button.button.delete-button,
+.button.delete-button {
+  background: #ff4444;
+}
+
+button.button.delete-button.block-delete {
+  cursor: not-allowed;
+  filter: brightness(1.5);
+}
+
+/* ================= RECIPE CREATE ================= */
+form {
+  margin-bottom: 50px;
+}
+
+.recipe-create {
+  margin: 55px 0 30px;
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 8px;
+}
+
+.input-group #photos-upload {
+  position: relative;
+  display: block;
+  margin-top: 8px;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+}
+
+.input-group #photos-upload i {
+  border-radius: 4px;
+  /* background-color: var(--secondary-color); */
+  color: #999;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  font-size: 40px;
+}
+
+.input-group #photos-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.input-group #photos-preview {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+  box-shadow: 0 2px 2px -6px #333;
+}
+
+.input-group #photos-preview img {
+  width: 100%;
+  border-radius: 4px;
+  height: 150px;
+  object-fit: cover;
+  margin: 0;
+}
+
+#photos-preview .photo {
+  position: relative;
+}
+
+#photos-preview .photo i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 200%;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 400ms;
+}
+
+#photos-preview .photo:hover i {
+  opacity: 1;
+}
+
+.input-group h4 {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.input-group a {
+  cursor: pointer;
+}
+
+.input-group + .input-group {
+  margin-top: 30px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  padding: 0.8rem;
+  font-size: 18px;
+  letter-spacing: 1px;
+  outline: none;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+select {
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
+    no-repeat right #fff;
+  background-position-x: 98%;
+  -webkit-appearance: none;
+}
+
+.input-group .button-text {
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+textarea {
+  resize: none;
+  letter-spacing: initial;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: #dc4747;
+}
+
+/* ================= CHEFS ================= */
+img.chef-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}

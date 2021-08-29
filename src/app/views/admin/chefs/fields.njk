@@ -1,0 +1,24 @@
+<div class="input-group">
+    <h4>Nome</h4>
+    <input type="text" name="name" placeholder="" value="{{ chef.name }}">
+</div>
+<div class="input-group">
+    <h4>Avatar</h4>
+    <div class="photos">
+        <div class="avatar">
+            <div class="avatar-upload">
+                <input type="file" name="avatar" id="avatar-input" accept="image/*" onchange="PhotosUpload.handleFileInput(event);">
+                <div class="button">Enviar avatar</div>
+            </div>
+            <div id="photos-preview">
+                {% if chef.image %}
+                <div class="photo" id="{{ chef.image.id }}">
+                    <img src="{{ chef.image.src }}" alt="{{ chef.image.name }}">
+                    <i class="material-icons"  onclick="PhotosUpload.removeOldPhoto(event);">close</i>
+                </div>
+                <input type="hidden" name="removed_files">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

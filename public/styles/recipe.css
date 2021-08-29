@@ -1,0 +1,151 @@
+/* ================= MAIN ================= */
+main {
+  color: var(--third-color);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--primary-color);
+}
+
+/* ================= IMAGES ================= */
+main .highlight {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+#images-wrapper {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 10px;
+  margin: 8px 0 50px auto;
+  margin-bottom: 50px;
+}
+
+#images-wrapper img {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  object-fit: cover;
+  transition: opacity 400ms;
+}
+
+#images-wrapper img.active,
+#images-wrapper img:hover {
+  opacity: 1;
+}
+
+/* ================= LIGHTBOX ================= */
+.lightbox-target {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: -100%;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: all 200ms;
+}
+
+.lightbox-target > img {
+  margin: auto;
+  position: absolute;
+  inset: 0;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  height: 90%;
+  background-color: #fff;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.lightbox-target .lightbox-close {
+  position: absolute;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  right: 0;
+  top: -80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 400ms;
+}
+
+main .recipe-head {
+  margin: 50px auto;
+  text-align: center;
+}
+
+main .recipe-head h1 {
+  margin-bottom: 4px;
+}
+
+/* ================= RECIPE CONTAINER ================= */
+.recipe-container-info {
+  display: grid;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.hide {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.hide h2 {
+  font-size: 24px;
+  line-height: 28px;
+  margin-right: 8px;
+}
+
+.hide a {
+  color: #999999;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  cursor: pointer;
+}
+
+/* ================= INGREDIENTS and PREPARE ================= */
+.recipe-info {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+ul:not(:first-child) {
+  transition: all 400ms;
+  margin-left: 20px;
+}
+
+ul li {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/* ================= ADDITIONAL INFO ================= */
+.additional-info p {
+  transition: all 400ms;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}

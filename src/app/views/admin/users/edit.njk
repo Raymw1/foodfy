@@ -1,0 +1,41 @@
+{% extends 'templates/layoutAdmin.njk' %}
+{% block head %}
+    <title>Foodfy - Editar usuário</title>
+    <link rel="stylesheet" href="/styles/users.css">
+{% endblock head %}
+
+{% block content %}
+        <form action="/admin/users/{{ data.id }}?_method=PUT" method="post">
+        <div class="user-create">
+            <div class="user-edit">
+                <h2>Editar usuário</h2>
+                <div class="actions">
+                  <button type="submit" 
+                    class="delete-button button {% if blockDelete %}block-delete{% endif %}" 
+                    form="delete-form">Deletar</button>
+                  <button type="submit" class="button">Salvar</button>
+                </div>
+            </div>
+        </div>
+            <div class="grid">
+                <div class="input-group">
+                    <h4>Nome</h4>
+                    <input type="text" name="name" id="name" placeholder="Digite o nome completo" value="{{ data.name }}">
+                </div>
+                <div class="input-group">
+                    <h4>Email</h4>
+                    <input type="email" name="email" onblur="Validate.apply(this, 'isEmail')" placeholder="Digite o email" value="{{ data.email }}">
+                </div>
+            </div>
+            <div class="input-group">
+            <input type="checkbox" name="is_admin" id="is_admin" {{ 'checked' if data.is_admin }}>
+            <h4 class="admin"><label for="is_admin">Administrador</label></h4>
+            </div>
+        </form>
+        {% if not blockDelete %}
+        <form id="delete-form" action="/admin/users/{{ data.id }}?_method=DELETE" method="post">
+            <input type="hidden" name="id" value="{{ data.id }}">
+        </form>
+        {% endif %}
+{% endblock content %}
+

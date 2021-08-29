@@ -1,0 +1,154 @@
+:root {
+  --primary-color: #111111;
+  --secondary-color: #777777;
+  --third-color: #444444;
+  --purple: #6558c3;
+  --red: #f55a5a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.container {
+  margin: 0 auto;
+  color: var(--primary-color);
+  width: 90%;
+  max-width: 940px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+/* ================= HEADER ================= */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+
+header nav ul li.active {
+  font-weight: bold;
+}
+
+.menu-content {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  display: none;
+}
+
+header h1 {
+  font-family: "Dancing Script", cursive;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin-right: 20px;
+}
+
+nav ul li {
+  margin-right: 30px;
+  font-size: 16px;
+}
+
+.navbar .menu ul li a {
+  transition: all 200ms;
+  position: relative;
+}
+
+.navbar .menu ul li a::after {
+  content: "";
+  transition: all 400ms ease-in-out;
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  left: 0;
+  width: 0;
+  background-color: var(--red);
+}
+
+.navbar .menu ul li:hover a::after {
+  width: 100%;
+}
+
+/* ================= FORM ================= */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"] {
+  width: 250px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  padding: 10px 15px;
+  font-size: 14px;
+  line-height: 16px;
+  outline: none;
+  border-radius: 4px;
+}
+
+button[type="submit"].button {
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 4px;
+  background-color: var(--purple);
+  margin-left: 8px;
+}
+
+header form {
+  display: flex;
+  align-items: center;
+}
+
+/* ================= MAIN ================= */
+main {
+  font-size: 18px;
+}
+
+.head-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background-color: #eeeeee;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  color: #999999;
+  font-size: 14px;
+  line-height: 16px;
+}

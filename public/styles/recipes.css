@@ -1,0 +1,39 @@
+/* ================= MAIN ================= */
+
+header {
+  margin-bottom: 50px;
+}
+
+main > h2 {
+  margin-bottom: 20px;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* ================= PAGINATION ================= */
+.pagination {
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination a,
+.pagination span {
+  margin-right: 8px;
+  font-weight: bold;
+  color: var(--purple);
+  transition: all 400ms;
+}
+
+.pagination a:hover {
+  filter: brightness(0.4);
+  transform: translateY(-2px);
+  text-decoration: underline;
+}
+
+.pagination a:last-child {
+  margin-right: 0;
+}

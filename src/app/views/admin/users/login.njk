@@ -1,0 +1,27 @@
+{% extends 'templates/layout.njk' %}
+{% block head %}
+    <title>Foodfy - Registrar</title>
+    <link rel="stylesheet" href="/styles/login.css">
+{% endblock head %}
+
+{% block content %}
+        <div class="user-login">
+            <form action="/admin/users/login" method="post">
+            <div class="user-create">
+                <div class="user-edit">
+                    <h2>Iniciar sessão</h2>
+                    <div class="actions">
+                    </div>
+                </div>
+            </div>
+                {% include "admin/users/loginFields.njk" %}
+                <div class="actions-form">
+                    <div class="other-actions">
+                        <a href="/admin/users/create" class="small">Registre-se</a>
+                        <a href="/admin/users/forgot-password" class="small">Perdeu a senha?</a>
+                    </div>
+                    <button type="submit" class="button">Acessar</button>
+                </div>
+            </form>
+        </div>
+{% endblock content %}

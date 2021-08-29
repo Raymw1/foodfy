@@ -1,0 +1,27 @@
+<div class="header">
+    <header>
+        <div class="navbar">
+            <a href="/admin"><h1>Foodfy</h1></a>
+            <nav>
+                <div class="menu">
+                    <div class="menu-content">
+                        <ul>
+                            <div class="links">
+                                <li><a href="/admin/recipes">Receitas</a></li>
+                                <li><a href="/admin/chefs">Chefs</a></li>
+                                <li><a href="/admin/profile">Perfil</a></li>
+                                {% if session.is_admin %}
+                                <li><a href="/admin/users">Usuários</a></li>
+                                {% endif %}
+                            </div>
+                            <form action="/admin/users/logout" method="POST">
+                                <button type="submit" class="logout">Sair</button>
+                            </form>
+                        </ul>
+                        <a href="#" class="menu-icon" onclick="Menu.open()"><i class="material-icons">menu</i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+</div>

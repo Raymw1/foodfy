@@ -1,0 +1,28 @@
+{% if session.is_admin %}
+{% extends 'templates/layoutAdmin.njk' %}
+{% else %}
+{% extends 'templates/layout.njk' %}
+{% endif %}
+{% block head %}
+    <title>Foodfy - Registrar</title>
+    {% if not session.is_admin %}
+    <link rel="stylesheet" href="/styles/login.css">
+    {% endif %}
+    <link rel="stylesheet" href="/styles/users.css">
+{% endblock head %}
+
+{% block content %}
+        <form action="/admin/users/create" method="post">
+        <div class="user-create">
+            <div class="user-edit">
+                <h2>Criar usuário</h2>
+                <div class="actions">
+                  <button type="submit" class="button" onclick="Validate.allFields(event);">Salvar</button>
+                  <button type="reset" onclick="history.back()" class="button abort">Cancelar</button>
+                </div>
+            </div>
+        </div>
+            {% include "admin/users/fields.njk" %}
+        </form>
+{% endblock content %}
+

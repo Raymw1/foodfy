@@ -1,0 +1,21 @@
+{% extends 'templates/layoutAdmin.njk' %}
+{% block head %}
+    <title>Foodfy - Criar receita</title>
+    <link rel="stylesheet" href="/styles/recipe.css">
+{% endblock head %}
+
+{% block content %}
+        <form action="/admin/recipes" method="post" enctype="multipart/form-data">
+        <div class="recipe-create">
+            <div class="recipe-edit">
+                <h2>Criando receita</h2>
+                <button type="submit" class="button" onclick="Validate.allFields(event);">Salvar receita</button>
+            </div>
+        </div>
+            {% include "admin/recipes/fields.njk" %}
+        </form>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="/scripts/form.js"></script>
+{% endblock scripts %}

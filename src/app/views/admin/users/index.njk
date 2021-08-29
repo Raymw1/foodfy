@@ -1,0 +1,35 @@
+{% extends 'templates/layoutAdmin.njk' %}
+
+{% block head %}
+  <title>Foodfy - Usuários</title>
+  <link rel="stylesheet" href="/styles/users.css">
+{% endblock head %}
+
+{% block content %}
+      <div class="container users">
+        <div class="user-header">
+          <h3>Usuários</h3>
+          <a href="/admin/users/create" class="button">Novo</a>
+        </div>
+        <div class="user-cards">
+            {% for user in users %}
+            <div class="user-card">
+                <div class="user-card-info">
+                    <p>{{ user.name }}</p>
+                    <small>{{ user.email }}</small>
+                </div>
+                <div class="user-actions">
+                  <a href="/admin/users/{{ user.id }}/edit" class="edit-user">Editar</a>
+                  {% if not user.is_admin %}
+                  <form action="/admin/users/{{ user.id }}?_method=DELETE" method="POST">
+                    <input type="hidden" name="id" value="{{ user.id }}">
+                    <button type="submit">Remover</button>
+                  </form>
+                  {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+{% endblock content %}
+

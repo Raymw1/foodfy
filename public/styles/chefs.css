@@ -1,0 +1,101 @@
+.chef-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 180px);
+  gap: 20px;
+}
+
+.chef-card {
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 64px auto;
+  gap: 20px;
+  align-items: center;
+}
+
+.chef-card img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.chef-card p {
+  margin-bottom: 10px;
+}
+
+.chef-card a {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--purple);
+}
+
+.most-viewed {
+  margin-bottom: 50px;
+}
+
+.chef-card-info p {
+  margin-bottom: 0;
+}
+
+/* =================== AVATAR UPLOAD =================== */
+.avatar {
+  display: grid;
+  grid-template-columns: 140px 150px;
+  gap: 8px;
+}
+
+.input-group .avatar #photos-preview {
+  display: initial;
+}
+
+.input-group .avatar .photos-preview .photo {
+  width: 100%;
+}
+
+.avatar-upload {
+  position: relative;
+  display: block;
+  margin-top: 8px;
+  overflow: hidden;
+  width: 140px;
+  cursor: pointer;
+}
+
+.input-group .avatar-upload .button {
+  width: 100%;
+  /* height: 100%; */
+  text-align: center;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.input-group .avatar-upload input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 440px) {
+  .chef-cards,
+  .chef-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .chef-card img {
+    width: 100px;
+    height: 100px;
+  }
+}

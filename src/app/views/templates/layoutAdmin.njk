@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'parts/styles.njk' %}
+    {% block head %}
+    <title>Foodfy</title>
+    <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="/styles/recipes-grid.css">
+    {% endblock head %}
+    <link rel="stylesheet" href="/styles/admin.css">
+    <link rel="stylesheet" href="/styles/adminHeader.css">
+</head>
+<body>
+    <div class="{{ 'error-' if error }}{{ 'success-' if success }}message message-box">{{ error or success }}</div>
+    {% include 'parts/admin/header.njk' %}
+    <div class="container">
+        <main>
+            {% block content %}
+            {% endblock content %}
+        </main>
+    </div>
+    {% block scripts %}
+    {% endblock scripts %}
+    {% if success or error %}
+        <script>
+            document.querySelector(".message-box").classList.add("show");
+            setTimeout(() => {
+            document.querySelector(".message-box").setAttribute("class", "message-box");
+            }, 4000);
+        </script>
+    {% endif %}
+    {% include 'parts/admin/scripts.njk' %}
+</body>
+</html>

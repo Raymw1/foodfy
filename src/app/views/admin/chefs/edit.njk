@@ -1,0 +1,37 @@
+{% extends 'templates/layoutAdmin.njk' %}
+{% block head %}
+    <title>Foodfy - Editar chef</title>
+    <link rel="stylesheet" href="/styles/chefs.css">
+{% endblock head %}
+
+{% block content %}
+        <form action="/admin/chefs?_method=PUT" method="post" enctype="multipart/form-data">
+            <div class="recipe-create">
+                <div class="recipe-edit">
+                    <h2>Editar chef</h2>
+                    <div class="buttons">
+                        <button type="submit" 
+                        class="delete-button button {% if blockDelete %}block-delete{% endif %}" 
+                        form="delete-form">Deletar</button>
+                        <button type="submit" class="button">Salvar chef</button>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="id" value="{{ chef.id }}">
+            {% include "admin/chefs/fields.njk" %}
+        </form>
+        {% if not blockDelete %}
+        <form id="delete-form" action="/admin/chefs?_method=DELETE" method="post">
+            <input type="hidden" name="id" value="{{ chef.id }}">
+        </form>
+        {% endif %}
+{% endblock content %}
+
+{% block scripts %}
+    {% if errorDelete %}
+    <script>
+        alert("Você não pode deletar este chef. Este chef possui receitas!")
+    </script>
+    {% endif %}
+    <script src="/scripts/form.js"></script>
+{% endblock scripts %}

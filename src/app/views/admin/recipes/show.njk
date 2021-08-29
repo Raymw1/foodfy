@@ -1,0 +1,66 @@
+{% extends 'templates/layoutAdmin.njk' %}
+{% block head %}
+    <link rel="stylesheet" href="/styles/recipe.css">
+    <title>Foodfy - {{ recipe.title }}</title>
+{% endblock head %}
+
+{% block content %}
+        <div class="recipe-head">
+            <div class="recipe-edit">
+                <h2>Receita: {{ recipe.title }}</h2>
+                {% if isAllowed or session.is_admin %}
+                <a href="/admin/recipes/{{ recipe.id }}/edit" class="button">Editar receita</a>
+                {% endif %}
+            </div>
+            <div id="images-container">
+                {% if recipe.images[0] %}
+                <img src="{{ recipe.images[0].src }}" alt="{{ recipe.images[0].name }}" class="highlight" onclick="Lightbox.open(event)">
+                {% else %}
+                <img src="http://placehold.it/940x280?text=RECEITA SEM FOTO" alt="">
+                {% endif %}
+                <div class="lightbox-target">
+                    <img src="{{ recipe.images[0].src }}" alt="{{ recipe.images[0].name }}">
+                    <a href="#" class="lightbox-close" onclick="Lightbox.close();">
+                    <i class="material-icons">close</i>
+                    </a>
+                </div>
+                <div id="images-wrapper">
+                   {% for image in recipe.images %}
+                        <img src="{{ image.src }}" alt="{{ image.name }}" {% if loop.index0 == 0 %}class="active"{% endif %} onclick="ImageGallery.setImage(event)">
+                   {% endfor %} 
+                </div>
+            </div>
+            <h1>{{ recipe.title }}</h1>
+            <p>por {{ recipe.chef_name }}</p>
+        </div>
+        <div class="recipe-container-info">
+            <div class="recipe-info recipe-ingredients">
+                <div class="hide">
+                    <h2>Ingredientes</h2>
+                </div>
+                <ul>
+                {% for ingredient in recipe.ingredients %}
+                    <li>{{ ingredient }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            <div class="recipe-info prepare-mode">
+                <div class="hide">
+                    <h2>Modo de preparo</h2>
+                </div>
+                <ul class="{{ 'last-hidden' if not recipe.information }}">
+                {% for preparation in recipe.preparation %}
+                    <li>{{ preparation }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            {% if recipe.information != "" %}
+            <div class="additional-info">
+                <div class="hide">
+                    <h2>Informações adicionais</h2>
+                </div>
+                <p>{{ recipe.information }}</p>
+            </div>
+            {% endif %}
+        </div>
+{% endblock content %}

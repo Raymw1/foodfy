@@ -1,0 +1,24 @@
+/* ================= MAIN ================= */
+main {
+  margin-bottom: 50px;
+}
+
+main h2 {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+main p {
+  color: var(--third-color);
+  line-height: 28px;
+  margin-top: 20px;
+}
+
+section {
+  margin-top: 30px;
+}
+
+main h3 {
+  font-size: 20px;
+  line-height: 24px;
+}

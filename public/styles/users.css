@@ -1,0 +1,161 @@
+/* ================= CREATE USER ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 40px;
+  margin-bottom: 32px;
+}
+
+.grid .input-group + .input-group {
+  margin: 0;
+}
+
+.user-create {
+  margin: 55px 0 30px;
+}
+
+.user-edit {
+  text-align: initial;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.user-edit .abort {
+  background-color: #8a8a8a;
+}
+
+.user-edit .button:hover {
+  filter: brightness(1.1);
+}
+
+h4.admin {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+/* ================= LOGIN USER ================= */
+.user-login {
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.actions-form {
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actions-form .other-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.actions-form .small {
+  color: #969696;
+  font-size: 16px;
+  line-height: 19px;
+  transition: all 100ms;
+}
+
+.actions-form .small:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+/* ================= USERS ================= */
+.container.users {
+  margin: 56px auto;
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 72px;
+}
+
+.user-header h3 {
+  font-size: 24px;
+}
+
+.user-header a.button {
+  width: 140px;
+  text-align: center;
+}
+
+.user-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 52px;
+}
+
+.user-card-info {
+  margin-bottom: 16px;
+}
+
+.user-card-info small {
+  color: var(--secondary-color);
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+}
+
+.user-actions a {
+  color: var(--purple);
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  margin-right: 16px;
+}
+
+.user-actions form {
+  margin: 0;
+  display: flex;
+}
+
+.user-actions button {
+  color: var(--red);
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  margin-right: 16px;
+}
+
+@media (max-width: 560px) {
+  .user-edit {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-edit h2 {
+    margin-bottom: 16px;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 8px;
+    direction: rtl;
+  }
+
+  .user-edit .actions button {
+    width: 100%;
+    margin: 0;
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
+}

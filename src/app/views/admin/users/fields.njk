@@ -1,0 +1,25 @@
+<div class="grid">
+  <div class="input-group">
+      <h4>Nome</h4>
+      <input type="text" name="name" id="name" placeholder="Digite o nome completo" value="{{ user.name if not session.is_admin else data.name }}">
+  </div>
+  <div class="input-group">
+      <h4>Email</h4>
+      <input type="email" name="email" onblur="Validate.apply(this, 'isEmail')" placeholder="Digite o email" value="{{ user.email if not session.is_admin else data.email }}">
+  </div>
+  <div class="input-group">
+      <h4>Senha</h4>
+      <input type="password" name="password" id="password" placeholder="Digite sua senha">
+  </div>
+  <div class="input-group">
+      <h4>Confirme sua senha</h4>
+      <input type="password" name="passwordRepeat" id="passwordRepeat" placeholder="Digite sua senha">
+  </div>
+</div>
+{% if session.is_admin %}
+<div class="input-group">
+  <input type="checkbox" name="is_admin" id="is_admin">
+  <h4 class="admin"><label for="is_admin">Administrador</label></h4>
+</div>
+{% endif %}
+

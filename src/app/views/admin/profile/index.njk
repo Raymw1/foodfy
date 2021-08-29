@@ -1,0 +1,20 @@
+{% extends 'templates/layoutAdmin.njk' %}
+{% block head %}
+    <title>Foodfy - {{ user.name }}</title>
+    <link rel="stylesheet" href="/styles/users.css">
+{% endblock head %}
+
+{% block content %}
+        <form action="/admin/profile?_method=PUT" method="post">
+        <div class="user-create">
+            <div class="user-edit">
+                <h2>Bem vindo {{ user.name }}</h2>
+                <div class="actions">
+                  <button type="submit" class="button" onclick="Validate.allFields(event);">Salvar</button>
+                </div>
+            </div>
+        </div>
+            {% include "admin/profile/fields.njk" %}
+        </form>
+{% endblock content %}
+
