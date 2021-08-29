@@ -32,7 +32,7 @@ module.exports = {
 
       await mailer.sendMail({
         to: req.body.email,
-        from: "no-reply@foodfy.com.br",
+        from: process.env.APP_MAIL,
         subject: "Você foi registrado com sucesso!",
         html: `<h2>Acesse sua conta agora</h2>
         <p>Não se preocupe, clique no link abaixo para acessar sua conta</p>

@@ -48,7 +48,7 @@ module.exports = {
 
       await mailer.sendMail({
         to: user.email,
-        from: "no-reply@foodfy.com.br",
+        from: process.env.APP_MAIL,
         subject: "Recuperação de senha",
         html: `<h2>Recupere sua senha</h2>
         <p>Não se preocupe, clique no link abaixo para recuperar sua senha</p>

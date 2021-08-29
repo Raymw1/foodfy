@@ -7,7 +7,7 @@ module.exports = session({
     pool: db,
   }),
   name: "sid",
-  secret: "nosecret",
+  secret: process.env.APP_SECRET,
   resave: false,
   saveUninitialized: false,
   cookie: {
